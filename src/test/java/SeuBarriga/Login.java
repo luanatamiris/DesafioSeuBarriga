@@ -54,15 +54,15 @@ public class Login {
         driver.get("https://seubarriga.wcaquino.me/login");
 
         driver.findElement(By.xpath("//li/a[text()= 'Novo usuário?']")).click();
-        driver.findElement(By.id("nome")).sendKeys("kplwa51Intmed4h048");
-        driver.findElement(By.id("email")).sendKeys("kplwa51meu1tes42t5je20654@gmail.com");
+        driver.findElement(By.id("nome")).sendKeys("Intmed");
+        driver.findElement(By.id("email")).sendKeys("meuteste12065@gmail.com");
         driver.findElement(By.id("senha")).sendKeys("12345");
 
         Assert.assertEquals("Novo usuário?", driver.findElement(By.xpath("//li/a[text()= 'Novo usuário?']")).getText());
         WebDriverWait wait = new WebDriverWait(driver, (5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nome")));
-        Assert.assertEquals("kplwa51Intmed4h048", driver.findElement(By.id("nome")).getAttribute("value"));
-        Assert.assertEquals("kplwa51meu1tes42t5je20654@gmail.com", driver.findElement(By.id("email")).getAttribute("value"));
+        Assert.assertEquals("Intmed", driver.findElement(By.id("nome")).getAttribute("value"));
+        Assert.assertEquals("meuteste12065@gmail.com", driver.findElement(By.id("email")).getAttribute("value"));
 
         driver.findElement(By.xpath("//input[@value= 'Cadastrar']")).click();
 
